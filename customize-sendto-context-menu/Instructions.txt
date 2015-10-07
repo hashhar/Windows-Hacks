@@ -1,0 +1,3 @@
+The files are to be placed at
+
+C:\Users\Ashhar Hasan\AppData\Roaming\Microsoft\Windows\SendTo
