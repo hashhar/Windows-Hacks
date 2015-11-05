@@ -1,0 +1,1 @@
+start "Starting Bing Desktop Toolbar" "C:\Program Files (x86)\Microsoft\BingDesktop\BingDesktop.exe"
