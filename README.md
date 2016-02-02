@@ -6,14 +6,14 @@ This repository contains registry scripts, batch files and some knowledge to hel
 
 ### Windows Spotlight Lockscreen Wallpapers:
 
-#### PS1 Script:
+##### PS1 Script:
 
 1. Enable Windows Spotlight.
 2. Download the repository and unzip it somewhere.
 3. Open **`save-windows-spotlight-lockscreens`** folder.
 4. There are two scripts. The `.ps1` script runs in PowerShell and copies the images into your `Pictures` folder and arranges them into a `Vertical` and a `Horizontal` folder.
 
-#### Batch Script:
+##### Batch Script:
 
 1. The `.bat` script is useful to schedule this task.
 2. Open `Task Scheduler`.
