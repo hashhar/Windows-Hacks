@@ -1,0 +1,1 @@
+powershell.exe -File ./save-spotlight.ps1 %1
