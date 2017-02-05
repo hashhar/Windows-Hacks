@@ -3,6 +3,7 @@
 - [Knowledge Base](#knowledge-base)
   - [Windows Start Menu Entries](#windows-start-menu-entries)
   - [Customize "Send To" Context Menu Entries](#customize-send-to-context-menu-entries)
+  - [Customize Context Menu (Right Click Menu)](#customize-context-menu-right-click-menu)
 
 ## Windows Start Menu Entries
 
@@ -43,4 +44,25 @@ Their location can be found out by:
 
 ```bat
 %AppData%\Microsoft\Windows\SendTo
+```
+
+## Customize Context Menu (Right Click Menu)
+
+The context menu entries live mostly in the following registry keys:
+
+```ini
+[HKEY_CLASSES_ROOT\AllFileSystemObjects\shell]
+[HKEY_CLASSES_ROOT\AllFileSystemObjects\shellex]
+
+[HKEY_CLASSES_ROOT\*\shell]
+[HKEY_CLASSES_ROOT\*\shellex]
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell]
+[HKEY_CLASSES_ROOT\DesktopBackground\shellex]
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell]
+[HKEY_CLASSES_ROOT\Directory\Background\shellex]
+
+[HKEY_CLASSES_ROOT\Directory\shell]
+[HKEY_CLASSES_ROOT\Directory\shellex]
 ```
