@@ -4,6 +4,7 @@
   - [Windows Start Menu Entries](#windows-start-menu-entries)
   - [Customize "Send To" Context Menu Entries](#customize-send-to-context-menu-entries)
   - [Customize Context Menu (Right Click Menu)](#customize-context-menu-right-click-menu)
+    - [Adding an "Open PowerShell Here" Context Menu Entry](#adding-an-open-powershell-here-context-menu-entry)
 
 ## Windows Start Menu Entries
 
@@ -65,4 +66,63 @@ The context menu entries live mostly in the following registry keys:
 
 [HKEY_CLASSES_ROOT\Directory\shell]
 [HKEY_CLASSES_ROOT\Directory\shellex]
+```
+
+### Adding an "Open PowerShell Here" Context Menu Entry
+
+You don't need such a context menu entry if you have Windows 8 or later becuase
+you can simply hit the key combos `Alt + F + R` or `Alt + F + P` to open either
+PowerShell or Command Prompt in the current directory.
+
+But if you want, you can add a context menu entry to open PowerShell at the
+current location by using the following registry script. Simply paste the
+following into notepad and save it with the extension `.reg` and double click it
+to install it. Be sure to take a backup of your registry using `regedit` before
+proceeding to make sure you can undo the changes (or if you are experienced you
+can modify the below script to uninstall).
+
+```ini
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\powershell]
+@="Open PowerShell here"
+"Icon"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\powershell\command]
+@="\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \"%V\""
 ```
