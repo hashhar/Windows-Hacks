@@ -1,5 +1,7 @@
 # Windows Hacks For The Power User (and the lazy)
 
+## This has been archived since I can't seem to find other interesting things to put here. For some related stuff check out https://github.com/hashhar/windows-dotfiles
+
 **_NOTE_: This repository has been restructured completely and most of the
 things work differently from how you may remember. I would advise starting over
 instead of trying to monkey-patch your way to success.**
